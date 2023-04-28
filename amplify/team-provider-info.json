@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tendatesouraria-dev-191526-authRole",
+      "UnauthRoleArn": "arn:aws:iam::838100682767:role/amplify-tendatesouraria-dev-191526-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::838100682767:role/amplify-tendatesouraria-dev-191526-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-tendatesouraria-dev-191526-deployment",
+      "UnauthRoleName": "amplify-tendatesouraria-dev-191526-unauthRole",
+      "StackName": "amplify-tendatesouraria-dev-191526",
+      "StackId": "arn:aws:cloudformation:us-east-2:838100682767:stack/amplify-tendatesouraria-dev-191526/343409c0-d7ed-11ed-9690-06eac0ca6455",
+      "AmplifyAppId": "d4thscjfd3mgp"
+    },
+    "categories": {
+      "auth": {
+        "TendaTesouraria": {}
+      }
+    }
+  }
+}

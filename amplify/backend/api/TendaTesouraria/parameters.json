@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "TendaTesouraria",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2023-04-28T03:41:28.503Z"
+}
