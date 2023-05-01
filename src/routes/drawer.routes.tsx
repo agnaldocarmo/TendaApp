@@ -4,6 +4,7 @@ import { ScreenB } from '../screens/screenB';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import CustomSidebarMenu from '../components/customsideBar';
 import ListUsers from '../screens/ListUsers';
+import FormUsers from '../screens/FormUsers';
 
 const {Screen, Navigator } = createDrawerNavigator();
 
@@ -28,6 +29,7 @@ export default function DrawerRoutes(){
                 color:'white'
             },
             headerShown: true,
+            
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle:{
@@ -67,12 +69,20 @@ export default function DrawerRoutes(){
                 options={{
                     drawerLabel:'Lista de Membros/Agregados',
                     drawerIcon: ()=><MaterialIcons
-                    name="add"
+                    name="group-add"
                     size={20}
 
                     />
                 }}
             />
+            <Screen
+                name='formUser'
+                component={FormUsers}
+                options={{
+                    drawerItemStyle: { height: 0 }
+
+                }}
+                />
         </Navigator>
     )
 }

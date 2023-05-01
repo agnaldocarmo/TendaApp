@@ -10,13 +10,14 @@ import {
   Text,
   Linking,
 } from 'react-native';
-
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {
   DrawerContentScrollView,
   DrawerItemList,
   DrawerItem,
   DrawerContentComponentProps,
 } from '@react-navigation/drawer';
+import { color } from '@rneui/base';
 
 const CustomSidebarMenu = (props : DrawerContentComponentProps) => {
   const BASE_PATH =
@@ -32,12 +33,19 @@ const CustomSidebarMenu = (props : DrawerContentComponentProps) => {
       />
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
-        <DrawerItem
+        <DrawerItem labelStyle={{
+          color:"white"
+        }}
           label="Visit Us"
+          icon= {()=>  <MaterialIcons
+            name="web"
+            size={22}
+            color={color}
+            />}
           onPress={() => Linking.openURL('https://aboutreact.com/')}
         />
         <View style={styles.customItem}>
-          <Text
+          <Text style={styles.TextMenu}
             onPress={() => {
               Linking.openURL('https://aboutreact.com/');
             }}>
@@ -85,7 +93,12 @@ const styles = StyleSheet.create({
     padding: 16,
     flexDirection: 'row',
     alignItems: 'center',
+
   },
+  TextMenu:{
+
+    color:'white'
+  }
 });
 
 export default CustomSidebarMenu;
