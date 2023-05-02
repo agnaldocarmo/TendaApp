@@ -125,14 +125,14 @@ export const schema = {
                 "telefone": {
                     "name": "telefone",
                     "isArray": false,
-                    "type": "AWSPhone",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
                 "email": {
                     "name": "email",
                     "isArray": false,
-                    "type": "AWSEmail",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -151,6 +151,13 @@ export const schema = {
                             "pessoas"
                         ]
                     }
+                },
+                "urlFoto": {
+                    "name": "urlFoto",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -307,5 +314,5 @@ export const schema = {
     },
     "nonModels": {},
     "codegenVersion": "3.4.2",
-    "version": "1d3e40247a3b19f966956eb1aee8e494"
+    "version": "41f6fa60569e361541c2433e5d855168"
 };

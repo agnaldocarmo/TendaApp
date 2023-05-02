@@ -58,6 +58,7 @@ type EagerPessoas = {
   readonly telefone?: string | null;
   readonly email?: string | null;
   readonly movimentacoess?: (MovimentacoesPessoas | null)[] | null;
+  readonly urlFoto?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -74,6 +75,7 @@ type LazyPessoas = {
   readonly telefone?: string | null;
   readonly email?: string | null;
   readonly movimentacoess: AsyncCollection<MovimentacoesPessoas>;
+  readonly urlFoto?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

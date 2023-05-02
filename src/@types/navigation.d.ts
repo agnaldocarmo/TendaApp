@@ -1,3 +1,5 @@
+import { LazyPessoas } from "../models";
+
 export declare global {
     namespace ReactNavigation {
         interface RootParamList {
@@ -5,6 +7,10 @@ export declare global {
             screenB: {
                 name: string;
             };
+            listaMembros: undefined;
+            formUser:{
+                pessoa: LazyPessoas
+            }
         }
     }
     

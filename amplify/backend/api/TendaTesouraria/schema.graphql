@@ -11,9 +11,10 @@ type Pessoas @model @auth(rules: [{allow: public}]) {
   nome: String
   data_nasc: AWSDate
   cpf: String
-  telefone: AWSPhone
-  email: AWSEmail
+  telefone: String
+  email: String
   movimentacoess: [Movimentacoes] @manyToMany(relationName: "MovimentacoesPessoas")
+  urlFoto: String
 }
 
 enum TipoMovimentacao {
