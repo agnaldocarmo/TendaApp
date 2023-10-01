@@ -1,11 +1,10 @@
-import React,{ useContext, useState }  from "react";
+import React,{ useContext, useState, useEffect }  from "react";
 import {View,Text,Button,TouchableHighlight,Alert, FlatList, StyleSheet,StatusBar} from "react-native";
 import { DataStore } from '@aws-amplify/datastore';
 import { LazyPessoas, Pessoas } from '../models';
 import { ListItem,Avatar } from '@rneui/themed';
 import {useNavigation} from '@react-navigation/native';
-import  ContextoPessoa  from '../context/pessoas';
-
+import  ContextoPessoa, { getPessoas } from "../context/pessoas";
 
 
 type ItemProps = {nome: string, cpf: string};
@@ -13,9 +12,25 @@ type ItemProps = {nome: string, cpf: string};
 
 export default () => {
   const navigation =useNavigation();
-
   const {state} = useContext(ContextoPessoa)
 
+
+
+
+
+  useEffect(() => {
+    /**
+     * This keeps `post` fresh.
+     */
+    getPessoas().then((res)=>{ state.dataPessoa=res});
+    
+    return () => {
+     
+    };
+  }, []);
+  
+
+  console.warn(state)
   const Item = ({nome,cpf}:ItemProps) => (
       <View style={styles.item}>
         <Text style={styles.title}>{nome}-{cpf}</Text>
@@ -29,6 +44,7 @@ export default () => {
       data={state.dataPessoa}
       renderItem={({item, index, separators}) => (
       <ListItem bottomDivider onPress={()=>navigation.navigate("formUser",{pessoa:item})}>
+
 
     {!item.cpf?.toString()
       ?  <Avatar
@@ -75,7 +91,6 @@ export default () => {
               async onPress(){
                 const modelToDelete = await DataStore.query(Pessoas, item.id);
                 DataStore.delete(modelToDelete as LazyPessoas);
-                getPessoas().then(res => {setdPessoa(res)});
                 console.info("removido")
               }
             }

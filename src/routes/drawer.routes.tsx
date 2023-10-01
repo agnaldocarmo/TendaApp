@@ -4,7 +4,7 @@ import { ScreenB } from '../screens/screenB';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import CustomSidebarMenu from '../components/customsideBar';
 import ListUsers from '../screens/ListUsers';
-import FormUsers from '../screens/FormUsers';
+import FormUsers from '../screens/formUser';
 
 const {Screen, Navigator } = createDrawerNavigator();
 
@@ -65,8 +65,10 @@ export default function DrawerRoutes(){
             />
             <Screen
                 name='listaMembros'
+      
                 component={ListUsers}
                 options={{
+                    title:"Lista de Membros",
                     drawerLabel:'Lista de Membros/Agregados',
                     drawerIcon: ()=><MaterialIcons
                     name="group-add"

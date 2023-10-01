@@ -1,25 +1,24 @@
-import  {createContext} from 'react'
+import  {JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, createContext} from 'react'
 import { DataStore } from '@aws-amplify/datastore';
 import { LazyPessoas,Pessoas } from '../models';
 
 let dataPessoa:LazyPessoas[] =[]
-const getPessoas = async function (){
-    const pessoas =  await DataStore.query(Pessoas);
-
-    //console.info(pessoas);
-
-    return pessoas;
-}
-
-getPessoas().then((res)=>{ dataPessoa=res});
 
 const ContextoPessoa = createContext({}) 
 
-export const PessoaProvider = (props) => {
+export const getPessoas = async function (){
+    const pessoas =  await DataStore.query(Pessoas);
+    console.warn('catch pessoa!')
+    return pessoas;
+}
+
+
+export const PessoaProvider = (props: { children: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }) => {
+
     return (
         <ContextoPessoa.Provider value={{
             state:{
-                dataPessoa 
+                dataPessoa
             }
         }}>
          {props.children}

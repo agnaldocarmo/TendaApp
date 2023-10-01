@@ -10,7 +10,6 @@ import  {PessoaProvider}  from './context/pessoas';
 Amplify.configure(awsExports);
 
 
-
 export default function App(){
   return (
     <PessoaProvider>

@@ -1,4 +1,4 @@
-import { LazyPessoas } from "../models";
+import { Pessoas } from "../models";
 
 export declare global {
     namespace ReactNavigation {
@@ -9,7 +9,7 @@ export declare global {
             };
             listaMembros: undefined;
             formUser:{
-                pessoa: LazyPessoas
+                     pessoa: Pessoas
             }
         }
     }
